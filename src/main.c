@@ -42,55 +42,72 @@ int main(){
         printf("Cannot open the script file.\n");
         return 0;
     }
+    printf("%p\n",pfile);
+    FILE *poptions = NULL;
+    if((poptions = fopen("example-game/options.toml","r")) == NULL){
+        printf("Cannot open the option script file.\n");
+        return 0;
+    }
+    while(!feof(pfile)){
         char *scr_scene = (char*)malloc(sizeof(char));
-        char *scr_role = (char*)malloc(sizeof(char));
-        char *scr_item = (char*)malloc(sizeof(char));
         char *scene = (char*)malloc(sizeof(char));
-        char *role = (char*)malloc(sizeof(char));
-        char *item = (char*)malloc(sizeof(char));
 
         fgets(scr_scene,128,pfile);
-        fgets(scr_role,128,pfile);
-        fgets(scr_item,128,pfile);
         sscanf(scr_scene,"[scene]: %s\n",scene);
-        sscanf(scr_role,"[role]: %s\n",role);
-        sscanf(scr_item,"[item]: %s\n",item);
-
-        free(scr_scene);
-        free(scr_role);
-        free(scr_item);
-
+        printf("[scene]: %s\n",scene);
+        
         if(strncmp(scene,"bedroom",strlen(scene)) == 0){
             system("tycat example-game/assets/bedroom.bmp");
         }else if(strncmp(scene,"bathroom",strlen(scene)) == 0){
             system("tycat example-game/assets/bathroom.bmp");
         }
+        free(scr_scene);
+        free(scene);
         
+        char *scr_role = (char*)malloc(sizeof(char));
+        char *role = (char*)malloc(sizeof(char));
+
+        fgets(scr_role,128,pfile);
+        sscanf(scr_role,"[role]: %s\n",role);
+        printf("[role]: %s\n",role);
         if(strncmp(role,heroine->name,strlen(role)) == 0){
             system("tycat example-game/assets/heroine.bmp");
         }
-        printf("[%s]\n",role);
+        free(scr_role);
+        free(role);
+        
+        char *scr_item = (char*)malloc(sizeof(char));
+        char *item = (char*)malloc(sizeof(char));
+
+        fgets(scr_item,128,pfile);
+        sscanf(scr_item,"[item]: %s\n",item);
+        printf("[item]: %s\n",item);
+        free(scr_item);
+        free(item);
 
         char *scr_dialog = (char*)malloc(sizeof(char));
         char *dialogue = (char*)malloc(sizeof(char));
+
         fgets(scr_dialog,128,pfile);
         sscanf(scr_dialog,"[dialog]: %s\n",dialogue);
-        // free(scr_dialog);
         printf("%s\n",dialogue);
+        // free(scr_dialog);
+        free(dialogue);
 
         char *scr_choice = (char*)malloc(sizeof(char));
         char *choice = (char*)malloc(sizeof(char));
         fgets(scr_choice,128,pfile);
         sscanf(scr_choice,"[choice]: %s\n",choice);
-        // printf("choice = %s\n",choice);
+        printf("choice = %s\n",choice);
         if(strncmp(scr_choice,"none",strlen(choice)) == 0){
             printf("選擇選項\n");
         }
-        char next_page = '0';
-        scanf("%c",&next_page);
-        if(next_page != ('0'-48)){
-            system("clear");
-        }
+        free(choice);
+        free(scr_choice);
+        flush();
+        system("clear");
+    }
+    printf("%p\n",pfile);
     fclose(pfile);
     return 0;
 }
