@@ -11,12 +11,8 @@ terminology --version
 ```
 成功安裝後，在終端機執行
 ```
-make
 terminology
-```
-將轉換至Terminology的終端執行畫面
-執行
-```
+make
 ./engine
 ```
 即可開始遊戲
