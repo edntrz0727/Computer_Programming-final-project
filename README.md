@@ -46,13 +46,13 @@ make
 * options.toml - 選項分支
 ### 格式
 * script.toml
-    * [scene]: 場景
-    * [role]: 角色
-    * [item]:  是否使用物品
+    * [scene] 場景
+    * [role] 角色
+    * [item] 是否使用物品
         * 不使用物品為none
-    * [dialog]:對話內容
-    * [choice]: 選項連接至第幾幕、有幾個選項
+    * [dialog] 對話內容
+    * [choice] 選項連接至第幾幕、有幾個選項
         * 無選項則為none
 * options.toml
-    * [scene]: 第幾幕
-    * [num]: 第幾個選項的對話內容及後續劇情
+    * [scene] 第幾幕
+    * [num] 第幾個選項的對話內容及後續連接劇情
