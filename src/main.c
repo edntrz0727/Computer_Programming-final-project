@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdint.h>
+// #include<toml-c.h>
 #include<string.h>
 #include<stdlib.h>
 
@@ -42,72 +43,80 @@ int main(){
         printf("Cannot open the script file.\n");
         return 0;
     }
-    printf("%p\n",pfile);
+    // printf("%p\n",pfile);
     FILE *poptions = NULL;
     if((poptions = fopen("example-game/options.toml","r")) == NULL){
         printf("Cannot open the option script file.\n");
         return 0;
     }
+    char *str = malloc(sizeof(char));
+    char *scene = (char*)malloc(sizeof(char));
+    char *role = (char*)malloc(sizeof(char));
+    char *item = (char*)malloc(sizeof(char));
+    char *dialogue = (char*)malloc(sizeof(char));
+    char *choice = (char*)malloc(sizeof(char));
+    char *option_scene = (char*)malloc(sizeof(char));
+    int32_t num_of_options = 0;
+    int32_t tmp_choice = 0;
     while(!feof(pfile)){
-        char *scr_scene = (char*)malloc(sizeof(char));
-        char *scene = (char*)malloc(sizeof(char));
-
-        fgets(scr_scene,128,pfile);
-        sscanf(scr_scene,"[scene]: %s\n",scene);
+        fgets(str,128,pfile);
+        sscanf(str,"[scene]: %s\n",scene);
         printf("[scene]: %s\n",scene);
+        if(strncmp(scene,"end",strlen(scene)) == 0){
+            printf("End!\nThanks for your play.\n");
+            if(pfile == NULL){
+                printf("67\n");
+            }
+            // fclose(pfile);
+            return 0;
+        }
         
         if(strncmp(scene,"bedroom",strlen(scene)) == 0){
             system("tycat example-game/assets/bedroom.bmp");
         }else if(strncmp(scene,"bathroom",strlen(scene)) == 0){
             system("tycat example-game/assets/bathroom.bmp");
         }
-        free(scr_scene);
-        free(scene);
-        
-        char *scr_role = (char*)malloc(sizeof(char));
-        char *role = (char*)malloc(sizeof(char));
 
-        fgets(scr_role,128,pfile);
-        sscanf(scr_role,"[role]: %s\n",role);
+        fgets(str,128,pfile);
+        sscanf(str,"[role]: %s\n",role);
         printf("[role]: %s\n",role);
         if(strncmp(role,heroine->name,strlen(role)) == 0){
             system("tycat example-game/assets/heroine.bmp");
         }
-        free(scr_role);
-        free(role);
-        
-        char *scr_item = (char*)malloc(sizeof(char));
-        char *item = (char*)malloc(sizeof(char));
 
-        fgets(scr_item,128,pfile);
-        sscanf(scr_item,"[item]: %s\n",item);
+        fgets(str,128,pfile);
+        sscanf(str,"[item]: %s\n",item);
         printf("[item]: %s\n",item);
-        free(scr_item);
-        free(item);
 
-        char *scr_dialog = (char*)malloc(sizeof(char));
-        char *dialogue = (char*)malloc(sizeof(char));
-
-        fgets(scr_dialog,128,pfile);
-        sscanf(scr_dialog,"[dialog]: %s\n",dialogue);
+        fgets(str,1024,pfile);
+        sscanf(str,"[dialog]: %s\n",dialogue);
         printf("%s\n",dialogue);
-        // free(scr_dialog);
-        free(dialogue);
 
-        char *scr_choice = (char*)malloc(sizeof(char));
-        char *choice = (char*)malloc(sizeof(char));
-        fgets(scr_choice,128,pfile);
-        sscanf(scr_choice,"[choice]: %s\n",choice);
+        
+        fgets(str,128,pfile);
+        sscanf(str,"[choice]: %s\n",choice);
         printf("choice = %s\n",choice);
-        if(strncmp(scr_choice,"none",strlen(choice)) == 0){
-            printf("選擇選項\n");
+        if(strncmp(choice,"none",strlen(choice)) != 0){
+            sscanf(choice,"%d,%s",&num_of_options,option_scene);
+            printf("幾個選項: %d\n第幾幕的第幾個選擇: %s\n",num_of_options,option_scene);
+            fgets(str,128,poptions);
+            for(int i = 0;i < num_of_options;i++){
+                fgets(str,128,poptions);
+                printf("%s",str);
+            }
+            scanf("%d",&tmp_choice);
+            printf("選擇了%d",tmp_choice);
+            flush();
         }
-        free(choice);
-        free(scr_choice);
-        flush();
+        fgets(str,128,stdin);
         system("clear");
     }
-    printf("%p\n",pfile);
+    free(scene);
+    free(role);
+    free(item);
+    free(dialogue);
+    free(choice);
     fclose(pfile);
+    fclose(poptions);
     return 0;
 }

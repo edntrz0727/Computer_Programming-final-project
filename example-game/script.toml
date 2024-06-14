@@ -1,29 +1,26 @@
 [scene]: bedroom
-[role]: luo #可以把他們改成數字，再幫我備註哪個數字是誰
+[role]: luo 
 [item]: none
 [dialog]: 這是什麼破結局啊！寫的也太爛了吧！我可憐的小祁祁啊TAT
 [choice]: none
-
 [scene]: 房間
 [role]: 旁白
 [item]: none
 [dialog]: 寧靜的夜晚，H市的一間小套房突然傳來女孩的怒吼。躺在床上的洛玥越想越憋屈，突然想幹些什麼事。
-[choice]: first_first, 1
-
+[choice]: 1,first_first
 [scene]: 房間
 [role]: 旁白 
 [item]: none
 [dialog]: 猛地起身拿起方才扔在一旁的手機，劈裡啪啦的在評論區留言。
 [choice]: none
-
 [scene]: 房間
 [role]: luo(手機) 
 [item]: none
-[dialog]: 小祁祁小時候被拋棄已經夠可憐了，好不容易靠自己努力創立了自己的商業帝國，誰還會稀罕墨家啊，就為了那有跟沒有一樣的親情還黑化成反派(☉д⊙)作者大大你寫的也太不合理了ヽ(#`Д´)ﾉ
+[dialog]: 小祁祁小時候被拋棄已經夠可憐了，好不容易靠自己努力創立了自己的商業帝國，誰還會稀罕墨家啊，就為了那有跟沒有一樣的親情還黑化成反派(☉д⊙)作者大大你寫的也太不合理了ヽ(`Д´)ﾉ
 [choice]: none
-
 [scene]: 房間
 [role]: 旁白
 [item]: none
 [dialog]: 發洩完的洛玥長舒出一口濁氣，但心裡還是悶悶的，哪哪都不得勁，為了緩解情緒，她決定去泡個澡轉換一下心情。
-[choice]: first_second, 1
+[choice]: 1,first_second
+[scene]: end
