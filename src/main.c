@@ -85,7 +85,7 @@ int main(){
         sscanf(str,"[role]: %s\n",role);
         // printf("[role]: %s\n",role);
         snprintf(bgbuffer,strlen(role)+strlen(scene)+32,"tycat example-game/assets/%s_%s.bmp",scene,role);
-        printf("bgbuffer = %s\n",bgbuffer);
+        // printf("bgbuffer = %s\n",bgbuffer);
         system(bgbuffer);
         if(strncmp(role,"LuoYue",strlen(role)) == 0){
             printf("洛玥\n");
@@ -164,7 +164,7 @@ int main(){
                         fgets(str,128,optionscript);
                         sscanf(str,"[role]: %s\n",role);
                         snprintf(bgbuffer,strlen(role)+strlen(scene)+32,"tycat example-game/assets/%s_%s.bmp",scene,role);
-                        printf("bgbuffer = %s\n",bgbuffer);
+                        // printf("bgbuffer = %s\n",bgbuffer);
                         system(bgbuffer);
                         if(strncmp(role,"LuoYue",strlen(role)) == 0){
                             printf("洛玥\n");
