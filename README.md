@@ -38,8 +38,14 @@ make
 * 可以使用[禮物]功能  
 選項中可能出現送禮，若送出的禮物符合角色喜好會增加好感度  
 好感度將影響最終結局，請注意好感度累積狀況
-## 實作功能
-
+## 實作
+### features
+* favor system
+* gift system
+* endings
+### problem
+* 
+### cautions
 ## script
 劇本存放於/example-game，分為兩個檔案
 * script.toml - 主要劇情

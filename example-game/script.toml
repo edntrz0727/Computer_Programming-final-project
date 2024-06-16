@@ -1,93 +1,85 @@
-[scene]: the real world bedroom
+[scene]: the_real_world _bedroom
 [role]: LuoYue
 [item]: none
 [dialog]: 這是什麼破結局啊！寫的也太爛了吧！我可憐的小祁祁啊TAT
 [choice]: none
-
-[scene]: the real world bedroom
+[scene]: the_real_world _bedroom
 [role]: Aside
 [item]: none
 [dialog]: 寧靜的夜晚，H市的一間小套房突然傳來女孩的怒吼。躺在床上的洛玥越想越憋屈，突然想幹些什麼事。
 [choice]: 1,first_first
-
-[scene]: the real world bedroom
+[scene]: the_real_world _bedroom
 [role]: Aside 
 [item]: smartphone
 [dialog]: 猛地起身拿起方才扔在一旁的手機，劈裡啪啦的在評論區留言。
 [choice]: none
-
-[scene]: the real world bedroom
+[scene]: the_real_world _bedroom
 [role]: LuoYue(手機)
 [item]: smartphone
 [dialog]: 小祁祁小時候被拋棄已經夠可憐了，好不容易靠自己努力創立了自己的商業帝國，誰還會稀罕墨家啊，就為了那有跟沒有一樣的親情還黑化成反派(☉д⊙)作者大大你寫的也太不合理了ヽ(`Д´)ﾉ
 [choice]: none
-
-[scene]: the real world bedroom
+[scene]: the_real_world _bedroom
 [role]: Aside
 [item]: none
 [dialog]: 發洩完的洛玥長舒出一口濁氣，但心裡還是悶悶的，哪哪都不得勁，為了緩解情緒，她決定去泡個澡轉換一下心情。
 [choice]: 1,first_second
-
-[scene]: end
-
-
-[scene]: the real world bathroom
+[scene]: the_real_world _bathroom
 [role]:  Aside
 [item]: none
 [dialog]: 嘩～洛玥泡在水裡，腦子裡還是沒忍住想著小說裡的情節。前些日子公司事情多到令人頭疼，這幾日好不容易忙完的洛玥總算能放個長假休息，正巧她在網上刷到一本名叫《墨韻南歌》的小說，劇情完全擊中她的喜好，於是她直接熬了兩個通宵看完了這部小說。結局是好的，但萬萬沒想到她最喜歡的角色下場這麼慘！就在洛玥越想越生氣時，手機屏幕突然傳來訊息聲。一條陌生訊息映入眼簾。
 [choice]: none
-
-[scene]: the real world bathroom
-[role]:  smatphone message
+[scene]: the_real_world _bathroom
+[role]: smatphone message
 [item]: smartphone
 [dialog]: 親，收到你的反饋啦！是否願意幫助反派改變命運呢？
 [choice]: 2,first_third
 
-    《是》
-    [scene]: the real world bathroom
+[[first_third.yes]]
+    [scene]: the_real_world _bathroom
     [role]:  Aside
     [item]: smartphone
     [dialog]: 看著手機裡的訊息洛玥覺得莫名其妙，正打算不理會這則訊息，卻沒來由的頭暈，一沒留神就點下了屏幕中的【是】，下一秒洛玥人就昏迷過去了，閉上眼的最後一秒，洛玥只有一個念頭。
     [choice]: none
 
-    [scene]: the real world bathroom
+    [scene]: the_real_world _bathroom
     [role]:  LuoYue(心想)
     [item]: none
     [dialog]: 太生氣到忘記泡澡不能泡太久了…
     [choice]: none
 
-    [scene]: the real world bathroom
+    [scene]: the_real_world _bathroom
     [role]:  Aside
     [item]: none
     [dialog]: 因為暈過去了，洛玥並沒有注意到手機又來了一條訊息…
     [choice]: none
 
-    [scene]: the real world bathroom
+    [scene]: the_real_world _bathroom
     [role]:  smatphone message
     [item]: smartphone
     [dialog]: 好的，親。正在傳送中呦～祝您任務順利！
     [choice]: none
 
-    《否》
-    [scene]: the real world bathroom
+[[first_third.no]]
+    [scene]: the_real_world _bathroom
     [role]:  Aside
     [item]: smartphone
     [dialog]: 看著手機裡的訊息洛玥覺得莫名其妙，打算不理會這則訊息。
     [choice]: none
 
-    [scene]: the real world bathroom
+    [scene]: the_real_world _bathroom
     [role]:  LuoYue
     [item]: none
     [dialog]: 什麼啊，現在真的什麼詐騙手法都有耶…
     [choice]: none
 
-    [scene]: the real world bathroom
+    [scene]: the_real_world _bathroom
     [role]:  Aside
     [item]: smartphone
     [dialog]: 邊想著洛玥邊順手點了【否】。尋思著泡澡時間也差不多了，便起身洗漱上床睡覺補眠去了。
     [choice]: none
 
-    --> 結局1: 洛玥未穿越，小說世界未有任何變化
+    [scene]: end
+    [dialog]: 洛玥未穿越，小說世界未有任何變化 <--結局1 End.-->
 
 
 [scene]: hospital

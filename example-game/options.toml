@@ -1,17 +1,13 @@
 [scene]: first_first
 [1]: 拿起手機
-
 [scene]: first_second
 [1]: 前往浴室泡澡
-
 [scene]: first_third
 [1]: 是
 [2]: 否
-
 [scene]: second_first
 [1]: 找工作
 [2]: 感謝
-
 [scene]: second_first_first
 [1]: 是
 [2]: 否

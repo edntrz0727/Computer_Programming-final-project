@@ -1,5 +1,4 @@
-all: src/main.c src/test.c
+all: src/main.c
 	gcc src/main.c -o engine
-	gcc src/test.c -o test
 clean:
-	rm engine test
+	rm engine
