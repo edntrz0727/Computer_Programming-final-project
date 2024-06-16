@@ -136,5 +136,29 @@ int main(){
         free(scene);
         scene = NULL;
     }
+    if(role != NULL){
+        free(role);
+        role = NULL;
+    }
+    if(item != NULL){
+        free(item);
+        item = NULL;
+    }
+    if(dialogue != NULL){
+        free(dialogue);
+        dialogue = NULL;
+    }
+    if(choice != NULL){
+        free(choice);
+        choice = NULL;
+    }
+    if(pfile != NULL){
+        fclose(pfile);
+        pfile = NULL;
+    }
+    if(poptions != NULL){
+        fclose(poptions);
+        poptions = NULL;
+    }
     return 0;
 }
