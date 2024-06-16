@@ -49,7 +49,7 @@ int main(){
         printf("Cannot open the option script file.\n");
         return 0;
     }
-    char *str = malloc(sizeof(char));
+    char *str = malloc(sizeof(char)*501);
     char *scene = (char*)malloc(sizeof(char));
     char *role = (char*)malloc(sizeof(char));
     char *item = (char*)malloc(sizeof(char));
@@ -62,14 +62,14 @@ int main(){
         fgets(str,128,pfile);
         sscanf(str,"[scene]: %s\n",scene);
         printf("[scene]: %s\n",scene);
-        if(strncmp(scene,"end",strlen(scene)) == 0){
-            printf("End!\nThanks for your play.\n");
-            if(pfile == NULL){
-                printf("67\n");
-            }
-            // fclose(pfile);
-            return 0;
-        }
+        // if(strncmp(scene,"end",strlen(scene)) == 0){
+        //     printf("End!\nThanks for your play.\n");
+        //     if(pfile == NULL){
+        //         printf("67\n");
+        //     }
+        //     // fclose(pfile);
+        //     return 0;
+        // }
         
         if(strncmp(scene,"bedroom",strlen(scene)) == 0){
             system("tycat example-game/assets/bedroom.bmp");
@@ -111,12 +111,13 @@ int main(){
         fgets(str,128,stdin);
         system("clear");
     }
-    free(scene);
-    free(role);
-    free(item);
-    free(dialogue);
-    free(choice);
-    fclose(pfile);
-    fclose(poptions);
+    if(str != NULL){
+        free(str);
+        str = NULL;
+    }
+    if(scene != NULL){
+        free(scene);
+        scene = NULL;
+    }
     return 0;
 }
