@@ -7,3 +7,11 @@
 [scene]: first_third
 [1]: 是
 [2]: 否
+
+[scene]: second_first
+[1]: 找工作
+[2]: 感謝
+
+[scene]: second_first_first
+[1]: 是
+[2]: 否
