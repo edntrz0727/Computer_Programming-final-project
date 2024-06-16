@@ -50,7 +50,7 @@ int main(){
         return 0;
     }
     FILE *optionscript = NULL;
-    if((optionscript = fopen("options_script.toml","r")) == NULL){
+    if((optionscript = fopen("example-game/options_script.toml","r")) == NULL){
         printf("Cannot open the option file.\n");
         return 0;
     }
