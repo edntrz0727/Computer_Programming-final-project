@@ -1,0 +1,41 @@
+first_third.1
+[scene]: the_real_world_bathroom
+[role]:  Aside
+[item]: smartphone
+[dialog]: 看著手機裡的訊息洛玥覺得莫名其妙，正打算不理會這則訊息，卻沒來由的頭暈，一沒留神就點下了屏幕中的【是】，下一秒洛玥人就昏迷過去了，閉上眼的最後一秒，洛玥只有一個念頭。
+[choice]: none
+[scene]: the_real_world_bathroom
+[role]:  LuoYue(think)
+[item]: none
+[dialog]: 太生氣到忘記泡澡不能泡太久了…
+[choice]: none
+[scene]: the_real_world_bathroom
+[role]:  Aside
+[item]: none
+[dialog]: 因為暈過去了，洛玥並沒有注意到手機又來了一條訊息…
+[choice]: none
+[scene]: the_real_world_bathroom
+[role]:  smatphone_message
+[item]: smartphone
+[dialog]: 好的，親。正在傳送中呦～祝您任務順利！
+[choice]: none
+first_third.1:end
+first_third.2
+[scene]: the_real_world_bathroom
+[role]:  Aside
+[item]: smartphone
+[dialog]: 看著手機裡的訊息洛玥覺得莫名其妙，打算不理會這則訊息。
+[choice]: none
+[scene]: the_real_world_bathroom
+[role]:  LuoYue
+[item]: none
+[dialog]: 什麼啊，現在真的什麼詐騙手法都有耶…
+[choice]: none
+[scene]: the_real_world_bathroom
+[role]:  Aside
+[item]: smartphone
+[dialog]: 邊想著洛玥邊順手點了【否】。尋思著泡澡時間也差不多了，便起身洗漱上床睡覺補眠去了。
+[choice]: none
+[scene]: end
+[dialog]: 洛玥未穿越，小說世界未有任何變化 <--結局1 End.-->
+first_third.2:end

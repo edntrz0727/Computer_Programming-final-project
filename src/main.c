@@ -49,6 +49,11 @@ int main(){
         printf("Cannot open the option script file.\n");
         return 0;
     }
+    FILE *optionscript = NULL;
+    if((optionscript = fopen("options_script.toml","r")) == NULL){
+        printf("Cannot open the option file.\n");
+        return 0;
+    }
     char *str = malloc(sizeof(char)*1024);
     char *scene = (char*)malloc(sizeof(char));
     char *role = (char*)malloc(sizeof(char));
@@ -135,6 +140,41 @@ int main(){
                     strncat(option_scene,"2",2);
                 }
                 printf("str = %s\n",option_scene);
+                fgets(str,128,optionscript);
+                if(strstr(str,option_scene) != NULL){
+                    system("clear");
+                    char *option_end = malloc(sizeof(char) * 100);
+                    strncpy(option_end,option_scene,strlen(option_scene));
+                    strncat(option_end,":end",5);
+                    // printf("option scene = %s\n",option_end);
+                    fgets(str,128,optionscript);
+                    while(strstr(str,option_end) == NULL){
+                        sscanf(str,"[scene]: %s\n",scene);
+                        // printf("[scene]:%s\n",scene);
+
+                        fgets(str,128,optionscript);
+                        sscanf(str,"[role]: %s\n",role);
+                        printf("%s\n",role);
+
+                        fgets(str,128,optionscript);
+                        sscanf(str,"[item]: %s\n",item);
+                        // printf("[item]:%s\n",item);
+
+                        fgets(str,1024,optionscript);
+                        sscanf(str,"[dialog]: %s\n",dialogue);
+                        printf("%s\n",dialogue);
+
+                        fgets(str,128,optionscript);
+                        sscanf(str,"[choice]: %s\n",choice);
+                        // printf("[choice]:%s\n",choice);
+                        fgets(str,128,stdin);
+                        fgets(str,128,optionscript);
+                        // printf("str: %s\n",str);
+                        // printf("optionscene: %s\n",option_scene);
+                        // printf("optionend: %s\n",option_end);
+                        system("clear");
+                    }
+                }
             }
             flush();
         }
