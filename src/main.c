@@ -63,6 +63,7 @@ int main(){
     char *option_scene = (char*)malloc(sizeof(char));
     int32_t num_of_options = 0;
     int32_t tmp_choice = 0;
+    char *bgbuffer = (char*)malloc(sizeof(char)*100);
     while(!feof(pfile)){
         fgets(str,128,pfile);
         sscanf(str,"[scene]: %s\n",scene);
@@ -83,6 +84,9 @@ int main(){
         fgets(str,128,pfile);
         sscanf(str,"[role]: %s\n",role);
         // printf("[role]: %s\n",role);
+        snprintf(bgbuffer,strlen(role)+strlen(scene)+32,"tycat example-game/assets/%s_%s.bmp",scene,role);
+        printf("bgbuffer = %s\n",bgbuffer);
+        system(bgbuffer);
         if(strncmp(role,"LuoYue",strlen(role)) == 0){
             printf("洛玥\n");
         }else if(strncmp(role,"Aside",strlen(role)) == 0){
@@ -105,7 +109,6 @@ int main(){
         // if(strncmp(role,heroine->name,strlen(role)) == 0){
         //     system("tycat example-game/assets/heroine.bmp");
         // }
-
         fgets(str,128,pfile);
         sscanf(str,"[item]: %s\n",item);
         // printf("[item]: %s\n",item);
@@ -151,10 +154,37 @@ int main(){
                     while(strstr(str,option_end) == NULL){
                         sscanf(str,"[scene]: %s\n",scene);
                         // printf("[scene]:%s\n",scene);
+                        if(strncmp(scene,"end",4) == 0){
+                            fgets(str,1024,optionscript);
+                            sscanf(str,"[dialog]: %s\n",dialogue);
+                            printf("%s\n",dialogue);
+                            return 0;
+                        }
 
                         fgets(str,128,optionscript);
                         sscanf(str,"[role]: %s\n",role);
-                        printf("%s\n",role);
+                        snprintf(bgbuffer,strlen(role)+strlen(scene)+32,"tycat example-game/assets/%s_%s.bmp",scene,role);
+                        printf("bgbuffer = %s\n",bgbuffer);
+                        system(bgbuffer);
+                        if(strncmp(role,"LuoYue",strlen(role)) == 0){
+                            printf("洛玥\n");
+                        }else if(strncmp(role,"Aside",strlen(role)) == 0){
+                            printf("旁白\n");
+                        }else if(strncmp(role,"LuoYue(smartphone)",strlen(role)) == 0){
+                            printf("洛玥(手機)\n");
+                        }else if(strncmp(role,"smartphone_message",strlen(role)) == 0){
+                            printf("洛玥(手機)\n");
+                        }else if(strncmp(role,"LuoYue(think)",strlen(role)) == 0){
+                            printf("洛玥(心想)\n");
+                        }else if(strncmp(role,"LinZhou",strlen(role)) == 0){
+                            printf("林舟\n");
+                        }else if(strncmp(role,"System",strlen(role)) == 0){
+                            printf("系統\n");
+                        }else if(strncmp(role,"YanYuQi",strlen(role)) == 0){
+                            printf("言煜祁\n");
+                        }else if(strncmp(role,"LinZhou(message)",strlen(role)) == 0){
+                            printf("林舟(簡訊)\n");
+                        }
 
                         fgets(str,128,optionscript);
                         sscanf(str,"[item]: %s\n",item);
@@ -167,12 +197,79 @@ int main(){
                         fgets(str,128,optionscript);
                         sscanf(str,"[choice]: %s\n",choice);
                         // printf("[choice]:%s\n",choice);
+                        
                         fgets(str,128,stdin);
                         fgets(str,128,optionscript);
                         // printf("str: %s\n",str);
                         // printf("optionscene: %s\n",option_scene);
                         // printf("optionend: %s\n",option_end);
                         system("clear");
+                    }
+                }else{
+                    while(!feof(optionscript)){
+                        fgets(str,128,optionscript);
+                        printf("str = %s\n",str);
+                        printf("option string = %s\n",option_scene);
+                        if(strstr(str,option_scene) != NULL){
+                            char *option_end = malloc(sizeof(char) * 100);
+                            strncpy(option_end,option_scene,strlen(option_scene));
+                            strncat(option_end,":end",5);
+                            printf("option end = %s\n",option_end);
+                            fgets(str,128,optionscript);
+                            while(strstr(str,option_end) == NULL){
+                                sscanf(str,"[scene]: %s\n",scene);
+                                // printf("[scene]:%s\n",scene);
+                                if(strncmp(scene,"end",4) == 0){
+                                    fgets(str,1024,optionscript);
+                                    sscanf(str,"[dialog]: %s\n",dialogue);
+                                    printf("%s\n",dialogue);
+                                    flush();
+                                    return 0;
+                                }
+
+                                fgets(str,128,optionscript);
+                                sscanf(str,"[role]: %s\n",role);
+                                snprintf(bgbuffer,strlen(role)+strlen(scene)+32,"tycat example-game/assets/%s_%s.bmp",scene,role);
+                                system(bgbuffer);
+                                if(strncmp(role,"LuoYue",strlen(role)) == 0){
+                                    printf("洛玥\n");
+                                }else if(strncmp(role,"Aside",strlen(role)) == 0){
+                                    printf("旁白\n");
+                                }else if(strncmp(role,"LuoYue(smartphone)",strlen(role)) == 0){
+                                    printf("洛玥(手機)\n");
+                                }else if(strncmp(role,"smartphone_message",strlen(role)) == 0){
+                                    printf("洛玥(手機)\n");
+                                }else if(strncmp(role,"LuoYue(think)",strlen(role)) == 0){
+                                    printf("洛玥(心想)\n");
+                                }else if(strncmp(role,"LinZhou",strlen(role)) == 0){
+                                    printf("林舟\n");
+                                }else if(strncmp(role,"System",strlen(role)) == 0){
+                                    printf("系統\n");
+                                }else if(strncmp(role,"YanYuQi",strlen(role)) == 0){
+                                    printf("言煜祁\n");
+                                }else if(strncmp(role,"LinZhou(message)",strlen(role)) == 0){
+                                    printf("林舟(簡訊)\n");
+                                }
+
+                                fgets(str,128,optionscript);
+                                sscanf(str,"[item]: %s\n",item);
+                                // printf("[item]:%s\n",item);
+
+                                fgets(str,1024,optionscript);
+                                sscanf(str,"[dialog]: %s\n",dialogue);
+                                printf("%s\n",dialogue);
+
+                                fgets(str,128,optionscript);
+                                sscanf(str,"[choice]: %s\n",choice);
+                                // printf("[choice]:%s\n",choice);
+                                fgets(str,128,stdin);
+                                fgets(str,128,optionscript);
+                                // printf("str: %s\n",str);
+                                // printf("optionscene: %s\n",option_scene);
+                                // printf("optionend: %s\n",option_end);
+                                system("clear");
+                            }
+                        }
                     }
                 }
             }
