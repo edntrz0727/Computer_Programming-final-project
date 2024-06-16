@@ -53,12 +53,15 @@ make
 ### 格式
 * script.toml
     * [scene] 場景
+      * [[]]:為第幾幕的哪一個選項分支  
+      example: 第一幕第三個選項，選擇《是》→ 劇本轉換至[[first_third.yes]]繼續讀取
     * [role] 角色
     * [item] 是否使用物品
         * 不使用物品為none
     * [dialog] 對話內容
-    * [choice] 選項連接至第幾幕、有幾個選項
+    * [choice] 選項連接至第幾幕、有幾個選項  
+    example: 第一幕第三個選項→ options.toml讀取[scene]: first_third 的內容
         * 無選項則為none
 * options.toml
-    * [scene] 第幾幕
+    * [scene] 第幾幕第幾次選項分支
     * [num] 第幾個選項的對話內容及後續連接劇情

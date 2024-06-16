@@ -69,18 +69,37 @@ int main(){
             return 0;
         }
         
-        if(strncmp(scene,"bedroom",strlen(scene)) == 0){
-            system("tycat example-game/assets/bedroom.bmp");
-        }else if(strncmp(scene,"bathroom",strlen(scene)) == 0){
-            system("tycat example-game/assets/bathroom.bmp");
-        }
+        // if(strncmp(scene,"bedroom",strlen(scene)) == 0){
+        //     system("tycat example-game/assets/bedroom.bmp");
+        // }else if(strncmp(scene,"bathroom",strlen(scene)) == 0){
+        //     system("tycat example-game/assets/bathroom.bmp");
+        // }
 
         fgets(str,128,pfile);
         sscanf(str,"[role]: %s\n",role);
         printf("[role]: %s\n",role);
-        if(strncmp(role,heroine->name,strlen(role)) == 0){
-            system("tycat example-game/assets/heroine.bmp");
+        if(strncmp(role,"LuoYue",strlen(role)) == 0){
+            printf("洛玥\n");
+        }else if(strncmp(role,"Aside",strlen(role)) == 0){
+            printf("\n");
+        }else if(strncmp(role,"LuoYue(smartphone)",strlen(role)) == 0){
+            printf("洛玥(手機)\n");
+        }else if(strncmp(role,"smartphone_message",strlen(role)) == 0){
+            printf("洛玥(手機)\n");
+        }else if(strncmp(role,"LuoYue(think)",strlen(role)) == 0){
+            printf("洛玥(心想)\n");
+        }else if(strncmp(role,"LinZhou",strlen(role)) == 0){
+            printf("林舟\n");
+        }else if(strncmp(role,"System",strlen(role)) == 0){
+            printf("系統\n");
+        }else if(strncmp(role,"YanYuQi",strlen(role)) == 0){
+            printf("言煜祁\n");
+        }else if(strncmp(role,"LinZhou(message)",strlen(role)) == 0){
+            printf("林舟(簡訊)\n");
         }
+        // if(strncmp(role,heroine->name,strlen(role)) == 0){
+        //     system("tycat example-game/assets/heroine.bmp");
+        // }
 
         fgets(str,128,pfile);
         sscanf(str,"[item]: %s\n",item);
