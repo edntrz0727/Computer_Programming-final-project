@@ -33,7 +33,7 @@
 [item]: smartphone
 [dialog]: 親，收到你的反饋啦！是否願意幫助反派改變命運呢？
 [choice]: 2,first_third
-[[first_third.yes]]
+[[first_third.1]]
 [scene]: the_real_world_bathroom
 [role]:  Aside
 [item]: smartphone
@@ -54,7 +54,8 @@
 [item]: smartphone
 [dialog]: 好的，親。正在傳送中呦～祝您任務順利！
 [choice]: none
-[[first_third.no]]
+[[first_third.1:end]]
+[[first_third.2]]
 [scene]: the_real_world_bathroom
 [role]:  Aside
 [item]: smartphone
@@ -157,7 +158,7 @@
 [item]: none
 [dialog]: 她打量著坐在椅子上西裝筆挺的男人，男人五官精緻，劍眉星目，眉如墨染，眸如星辰，整個人散發出一種英俊而神秘的氣質。他的眉毛濃密如劍，眉形鋒利，增添了幾分英氣；他的眼睛明亮有神，宛如夜空中的星辰，透露出深邃的神采。整體形象給人一種既俊秀又充滿力量的感覺，顯得獨特而富有魅力。或許是感受到她的視線，原本低著頭在看手機訊息的言煜祁抬起頭來看向她，洛玥看到趕緊收回目光。
 [choice]: 2,second_first
-[[second_first.find_job]]
+[[second_first.1]]
 [scene]: hospital
 [role]:  LuoYue
 [item]: none
@@ -198,7 +199,7 @@
 [item]: none
 [dialog]: 我缺個秘書，有興趣嗎？
 [choice]: 2,second_first_first
-[[second_first_first.yes]]
+[[second_first_first.1]]
 [scene]: hospital
 [role]:  Aside
 [item]: none
@@ -244,7 +245,9 @@
 [item]: none
 [dialog]: 我這任務進行的這麼順利的嗎…
 [choice]: none
-[[second_first_first.no]]
+[[second_first.1.end]]
+[[second_first_first.1.end]]
+[[second_first_first.2]]
 [scene]: hospital
 [role]:  Aside
 [item]: none
@@ -315,7 +318,9 @@
 [item]: none
 [dialog]: 我這任務進行的這麼順利的嗎…
 [choice]: none
-[[second_first.thanks]]
+[[second_first.1.end]]
+[[second_first_first.2.end]]
+[[second_first.2]]
 [scene]: hospital
 [role]:  LuoYue
 [item]: none
@@ -341,6 +346,7 @@
 [item]: none
 [dialog]: 語畢，便帶頭走出病房，林舟對洛玥點了個頭也跟著出去了。
 [choice]: none
+[[second_first.2.end]]
 [scene]: car
 [role]:  Aside
 [item]: none
@@ -471,7 +477,7 @@
 [item]: none
 [dialog]: 妳穿這樣…挺好看的。
 [choice]: 2,third_first
-[[third_first.tease]]
+[[third_first.1]]
 [scene]: studio
 [role]:  Aside
 [item]: none
@@ -502,7 +508,7 @@
 [item]: none
 [dialog]: 恭喜主人，目標人物黑化值又下降啦，現在已經降到15%了喔！
 [choice]: none
-[[third_first.shy]]
+[[third_first.2]]
 [scene]: studio
 [role]:  Aside
 [item]: none

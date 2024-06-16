@@ -61,7 +61,7 @@ int main(){
     while(!feof(pfile)){
         fgets(str,128,pfile);
         sscanf(str,"[scene]: %s\n",scene);
-        printf("[scene]: %s\n",scene);
+        // printf("[scene]: %s\n",scene);
         if(strncmp(scene,"end",strlen(scene)) == 0){
             fgets(str,1024,pfile);
             sscanf(str,"[dialog]: %s\n",dialogue);
@@ -77,11 +77,11 @@ int main(){
 
         fgets(str,128,pfile);
         sscanf(str,"[role]: %s\n",role);
-        printf("[role]: %s\n",role);
+        // printf("[role]: %s\n",role);
         if(strncmp(role,"LuoYue",strlen(role)) == 0){
             printf("洛玥\n");
         }else if(strncmp(role,"Aside",strlen(role)) == 0){
-            printf("\n");
+            printf("旁白\n");
         }else if(strncmp(role,"LuoYue(smartphone)",strlen(role)) == 0){
             printf("洛玥(手機)\n");
         }else if(strncmp(role,"smartphone_message",strlen(role)) == 0){
@@ -103,7 +103,7 @@ int main(){
 
         fgets(str,128,pfile);
         sscanf(str,"[item]: %s\n",item);
-        printf("[item]: %s\n",item);
+        // printf("[item]: %s\n",item);
 
         fgets(str,1024,pfile);
         sscanf(str,"[dialog]: %s\n",dialogue);
@@ -112,17 +112,30 @@ int main(){
         
         fgets(str,128,pfile);
         sscanf(str,"[choice]: %s\n",choice);
-        printf("choice = %s\n",choice);
+        // printf("choice = %s\n",choice);
         if(strncmp(choice,"none",strlen(choice)) != 0){
             sscanf(choice,"%d,%s",&num_of_options,option_scene);
-            printf("幾個選項: %d\n第幾幕的第幾個選擇: %s\n",num_of_options,option_scene);
+            printf("\n請選擇:\n");
+            // printf("幾個選項: %d\n第幾幕的第幾個選擇: %s\n",num_of_options,option_scene);
             fgets(str,128,poptions);
             for(int i = 0;i < num_of_options;i++){
                 fgets(str,128,poptions);
                 printf("%s",str);
             }
             scanf("%d",&tmp_choice);
-            printf("選擇了%d",tmp_choice);
+            // printf("選擇了%d",tmp_choice);
+            if(num_of_options > 1){
+                if(str[strlen(str)-1] == '\n'){
+                    str[strlen(str)-1] = '\0';
+                }
+                strncat(option_scene,".",2);
+                if(tmp_choice == 1){
+                    strncat(option_scene,"1",2);
+                }else{
+                    strncat(option_scene,"2",2);
+                }
+                printf("str = %s\n",option_scene);
+            }
             flush();
         }
         fgets(str,128,stdin);
